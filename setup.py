@@ -9,8 +9,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
   
 setup( 
-        name ='pycrypt-cli', 
-        version ='1.0', 
+        name ='pycrypt-cli',
         author ='Devansh Singh', 
         author_email ='devanshamity@gmail.com', 
         url ='https://github.com/Devansh3712/pycrypt', 
