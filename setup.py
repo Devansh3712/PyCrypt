@@ -3,10 +3,13 @@ from setuptools import setup, find_packages
 with open('requirements.txt') as f: 
     requirements = f.readlines() 
   
-long_description = '''Encryption and Decryption tool made using python'''
+from os import path
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
   
 setup( 
-        name ='pycrypt', 
+        name ='pycrypt-cli', 
         version ='1.0', 
         author ='Devansh Singh', 
         author_email ='devanshamity@gmail.com', 
@@ -16,11 +19,6 @@ setup(
         long_description_content_type ="text/markdown", 
         license ='MIT', 
         packages = find_packages(),
-        entry_points ={ 
-            'console_scripts': [ 
-                'pycrypt = pycrypt.pycrypt:main'
-            ] 
-        }, 
         classifiers =[
             "Programming Language :: Python :: 3", 
             "License :: OSI Approved :: MIT License", 
