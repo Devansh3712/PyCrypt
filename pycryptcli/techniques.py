@@ -125,15 +125,15 @@ class encryption:
 
 	#numeric
 	def binary(string):
-	    c = bin(string)[2:]
+	    c = bin(int(string))[2:]
 	    return c
 
 	def octal(string):
-	    c = oct(string)[2:]
+	    c = oct(int(string))[2:]
 	    return c
 
 	def hexadecimal(string):
-	    c = hex(n)[2:]
+	    c = hex(int(string))[2:]
 	    return c
 
 	#encoding

@@ -28,7 +28,7 @@ def all():
 
 @click.option("-c", "--category", help = "Returns cryption techniques from given category")
 @pycrypt.command()
-def categories(category: str):
+def category(category: str):
 	"Lists cryption techniques of the given category"
 
 	if category.lower() in list_of_techniques:
