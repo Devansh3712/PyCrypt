@@ -1,5 +1,6 @@
 #modules
-import techniques
+import pycryptcli
+from pycryptcli import techniques
 import click
 from time import sleep
 

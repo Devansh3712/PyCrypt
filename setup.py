@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages 
+from setuptools import *
   
 with open('requirements.txt') as f: 
     requirements = f.readlines() 
@@ -10,19 +10,25 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
   
 setup( 
         name ='pycrypt-cli',
+        version = '0.0',
         author ='Devansh Singh', 
         author_email ='devanshamity@gmail.com', 
-        url ='https://github.com/Devansh3712/pycrypt', 
+        url ='https://github.com/Devansh3712/pycrypt-cli', 
         description ='Cryption tool', 
         long_description = long_description, 
         long_description_content_type ="text/markdown", 
-        license ='MIT', 
-        packages = find_packages(),
+        license ='MIT',
+        packages = ["pycryptcli"],
+        include_package_data = True,
+        entry_points = {
+        	"console_scripts": [
+        		"pycrypt=pycryptcli.__main__:pycrypt",
+        	]
+        },
         classifiers =[
             "Programming Language :: Python :: 3", 
             "License :: OSI Approved :: MIT License", 
             "Operating System :: OS Independent", 
         ],
-        install_requires = requirements, 
-        zip_safe = False
+        install_requires = requirements,
 ) 

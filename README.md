@@ -23,7 +23,7 @@ The `encrypt` command takes 4 parameters:
 > Example
 
 ```shell
-pycrypt-cli encrypt --technique caesercipher --input_file input.txt --output_file output.txt --key 7
+pycrypt encrypt --technique caesercipher --input_file input.txt --output_file output.txt --key 7
 ```
 
 ### `Decrypt` command
@@ -37,7 +37,7 @@ The `decrypt` command takes 4 parameters:
 > Example
 
 ```shell
-pycrypt-cli decrypt --technique caesercipher --input_file input.txt --output_file output.txt --key 7
+pycrypt decrypt --technique caesercipher --input_file input.txt --output_file output.txt --key 7
 ```
 
 ### License
