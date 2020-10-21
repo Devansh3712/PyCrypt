@@ -226,9 +226,9 @@ class decryption:
 			if ord(a) not in range (65,91) and ord(a) not in range (97,124):
 				c += a
 			elif a.isupper():
-				c += chr((ord(a) - k - 65) % 26 + 65)
+				c += chr((ord(a) - key - 65) % 26 + 65)
 			else:
-				c += chr((ord(a) - k - 97) % 26 + 97)
+				c += chr((ord(a) - key - 97) % 26 + 97)
 		return c
 
 	def vigenereCipher(string, key):
