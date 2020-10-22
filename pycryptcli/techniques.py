@@ -79,12 +79,14 @@ class encryption:
 		}
 		b = ""
 		for i in string:
-			if i.lower() in code:
+			if i.isalpha() == True:
+				i = i.lower()
+			if i in code:
 				b += code[i]
 			else:
 				b += "#"
 			b += " "
-		return b
+		return b[:-1]
 
 	def tapCode(string):
 		code = {
@@ -117,6 +119,7 @@ class encryption:
 		}
 		c = ""
 		for i in string:
+			i = i.upper()
 			if i != " ":
 				c += code[i] + " "
 			else:

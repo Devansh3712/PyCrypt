@@ -45,196 +45,204 @@ def category(category: str):
 def encrypt(technique: str, input_file, output_file, key: str):
 	"Encrypt using the provided technique"
 
-	string = input_file.read()
+	try:
+		string = input_file.read()
+	except:
+		print('Unable to read the input file')
 
-	if technique.lower() == 'ascii':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-		    for i in bar:
-		        sleep(0.02)
-		result = techniques.encryption.ascii(string)
-		print(result)
-		output_file.write(result)
+	try:
 
-	elif technique.lower() == 'caesercipher':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-		    for i in bar:
-		        sleep(0.02)
-		result = techniques.encryption.caeserCipher(string, key)
-		print(result)
-		output_file.write(result)
+		if technique.lower() == 'ascii':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+			    for i in bar:
+			        sleep(0.02)
+			result = techniques.encryption.ascii(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'vigenerecipher':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-		    for i in bar:
-		        sleep(0.02)
-		result = techniques.encryption.vigenereCipher(string, key)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'caesercipher':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+			    for i in bar:
+			        sleep(0.02)
+			result = techniques.encryption.caeserCipher(string, key)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'morsecode':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-		    for i in bar:
-		        sleep(0.02)
-		result = techniques.encryption.morseCode(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'vigenerecipher':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+			    for i in bar:
+			        sleep(0.02)
+			result = techniques.encryption.vigenereCipher(string, key)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'tapcode':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-		    for i in bar:
-		        sleep(0.02)
-		result = techniques.encryption.tapCode(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'morsecode':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+			    for i in bar:
+			        sleep(0.02)
+			result = techniques.encryption.morseCode(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'binary':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-		    for i in bar:
-		        sleep(0.02)
-		result = techniques.encryption.binary(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'tapcode':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+			    for i in bar:
+			        sleep(0.02)
+			result = techniques.encryption.tapCode(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'octal':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-		    for i in bar:
-		        sleep(0.02)
-		result = techniques.encryption.octal(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'binary':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+			    for i in bar:
+			        sleep(0.02)
+			result = techniques.encryption.binary(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'hexadecimal':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-		    for i in bar:
-		        sleep(0.02)
-		result = techniques.encryption.hexadecimal(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'octal':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+			    for i in bar:
+			        sleep(0.02)
+			result = techniques.encryption.octal(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'base16':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.encryption.base16(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'hexadecimal':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+			    for i in bar:
+			        sleep(0.02)
+			result = techniques.encryption.hexadecimal(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'base32':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.encryption.base32(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'base16':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.encryption.base16(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'base64':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.encryption.base64(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'base32':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.encryption.base32(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'base85':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.encryption.base85(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'base64':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.encryption.base64(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'md5':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.encryption.md5(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'base85':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.encryption.base85(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'sha224':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.encryption.sha224(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'md5':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.encryption.md5(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'sha256':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.encryption.sha256(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'sha224':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.encryption.sha224(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'sha384':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.encryption.sha384(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'sha256':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.encryption.sha256(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'sha512':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.encryption.sha512(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'sha384':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.encryption.sha384(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'sha3_216':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.encryption.sha3_216(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'sha512':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.encryption.sha512(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'sha3_512':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.encryption.sha3_512(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'sha3_216':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.encryption.sha3_216(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'blake2_256':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.encryption.blake2_256(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'sha3_512':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.encryption.sha3_512(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'blake2_512':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.encryption.blake2_512(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'blake2_256':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.encryption.blake2_256(string)
+			print(result)
+			output_file.write(result)
+
+		elif technique.lower() == 'blake2_512':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Encrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.encryption.blake2_512(string)
+			print(result)
+			output_file.write(result)
+
+	except:
+		print(f"An error occured, {technique} not found")
 
 @click.option("-t", "--technique", help = "Add the technique to be used")
 @click.option("-i", "--input_file", type = click.File('r'), required = True, help = "Add the input file")
@@ -244,196 +252,217 @@ def encrypt(technique: str, input_file, output_file, key: str):
 def decrypt(technique: str, input_file, output_file, key: str):
 	"Decrypt using the given technique"
 
-	string = input_file.read()
+	try:
+		string = input_file.read()
+	except:
+		print('Unable to read input file')
 
-	if technique.lower() == 'ascii':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-		    for i in bar:
-		        sleep(0.02)
-		result = techniques.decryption.ascii(string)
-		print(result)
-		output_file.write(result)
+	try:
 
-	elif technique.lower() == 'caesercipher':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-		    for i in bar:
-		        sleep(0.02)
-		result = techniques.decryption.caeserCipher(string, key)
-		print(result)
-		output_file.write(result)
+		if technique.lower() == 'ascii':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+			    for i in bar:
+			        sleep(0.02)
+			result = techniques.decryption.ascii(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'vigenerecipher':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-		    for i in bar:
-		        sleep(0.02)
-		result = techniques.decryption.vigenereCipher(string, key)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'caesercipher':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+			    for i in bar:
+			        sleep(0.02)
+			result = techniques.decryption.caeserCipher(string, key)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'morsecode':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-		    for i in bar:
-		        sleep(0.02)
-		result = techniques.decryption.morseCode(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'vigenerecipher':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+			    for i in bar:
+			        sleep(0.02)
+			result = techniques.decryption.vigenereCipher(string, key)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'tapcode':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-		    for i in bar:
-		        sleep(0.02)
-		result = techniques.decryption.tapCode(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'morsecode':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+			    for i in bar:
+			        sleep(0.02)
+			result = techniques.decryption.morseCode(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'binary':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-		    for i in bar:
-		        sleep(0.02)
-		result = techniques.decryption.binary(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'tapcode':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+			    for i in bar:
+			        sleep(0.02)
+			result = techniques.decryption.tapCode(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'octal':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-		    for i in bar:
-		        sleep(0.02)
-		result = techniques.decryption.octal(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'binary':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+			    for i in bar:
+			        sleep(0.02)
+			result = techniques.decryption.binary(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'hexadecimal':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-		    for i in bar:
-		        sleep(0.02)
-		result = techniques.decryption.hexadecimal(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'octal':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+			    for i in bar:
+			        sleep(0.02)
+			result = techniques.decryption.octal(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'base16':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.decryption.base16(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'hexadecimal':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+			    for i in bar:
+			        sleep(0.02)
+			result = techniques.decryption.hexadecimal(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'base32':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.decryption.base32(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'base16':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.decryption.base16(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'base64':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.decryption.base64(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'base32':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.decryption.base32(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'base85':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.decryption.base85(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'base64':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.decryption.base64(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'md5':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.decryption.md5(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'base85':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.decryption.base85(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'sha224':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.decryption.sha224(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'md5':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.decryption.md5(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'sha256':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.decryption.sha256(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'sha224':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.decryption.sha224(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'sha384':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.decryption.sha384(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'sha256':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.decryption.sha256(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'sha512':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.decryption.sha512(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'sha384':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.decryption.sha384(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'sha3_216':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.decryption.sha3_216(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'sha512':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.decryption.sha512(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'sha3_512':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.decryption.sha3_512(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'sha3_216':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.decryption.sha3_216(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'blake2_256':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniquesdecryption.blake2_256(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'sha3_512':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.decryption.sha3_512(string)
+			print(result)
+			output_file.write(result)
 
-	elif technique.lower() == 'blake2_512':
-		fill_char = click.style('=')
-		with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
-			for i in bar:
-				sleep(0.02)
-		result = techniques.decryption.blake2_512(string)
-		print(result)
-		output_file.write(result)
+		elif technique.lower() == 'blake2_256':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniquesdecryption.blake2_256(string)
+			print(result)
+			output_file.write(result)
+
+		elif technique.lower() == 'blake2_512':
+			fill_char = click.style('=')
+			with click.progressbar(range(100), label='Decrypting', fill_char=fill_char) as bar:
+				for i in bar:
+					sleep(0.02)
+			result = techniques.decryption.blake2_512(string)
+			print(result)
+			output_file.write(result)
+
+	except:
+		print(f'An error occured, {technique} not found')
+
+@pycrypt.command()
+def info():
+	"Information about the PyCrypt project"
+
+	info = [
+		"PyCrypt is an encryption and decryption cli tool made using python",
+		"It is an open-source project, made by Devansh, available on GitHub and PyPi",
+		"Visit: https://github.com/pycrypt-cli"
+	]
+
+	for i in info:
+		print(i)
 
 if __name__ == "__main__":
 	pycrypt(prog_name = "pycrypt")
