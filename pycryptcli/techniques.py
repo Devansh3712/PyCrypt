@@ -29,12 +29,12 @@ class encryption:
 	    c = ""
 	    a = [ord(i) for i in (string)]
 	    b = [ord(j) for j in (key)]
-	    for x in range (len(n)):
-	        d = (a[x] + b[x % len(k)]) % 26
-	        if d.islower():
-	        	c = c + chr(65 + d)
+	    for x in range (len(string)):
+	        d = (a[x] + b[x % len(key)]) % 26
+	        if string[x].islower() == True:
+	        	c = c + chr(97 + d)
 	        else:
-	        	c = c+ chr(97 + d)
+	        	c = c+ chr(65 + d)
 	    return c
 
 	def morseCode(string):
@@ -131,34 +131,34 @@ class encryption:
 
 	#numeric
 	def binary(string):
-		string = string.split(" ")
 		ans = ""
 		for i in string:
 			if i.isdigit() == False:
 				ans += bin(int(ord(i)))[2:]
 			else:
 				ans += bin(int(i))[2:]
-		return ans
+			ans += " "
+		return ans[:-1]
 
 	def octal(string):
-	    string = string.split(" ")
 	    ans = ""
 	    for i in string:
 	    	if i.isdigit() == False:
 	    		ans += oct(int(ord(i)))[2:]
 	    	else:
 	    		ans += oct(int(i))[2:]
-	    return ans
+	    	ans += " "
+	    return ans[:-1]
 
 	def hexadecimal(string):
-		string = string.split(" ")
 		ans = ""
 		for i in string:
 			if i.isdigit() == False:
 				ans += hex(int(ord(i)))[2:]
 			else:
 				ans += hex(int(i))[2:]
-		return ans
+			ans += " "
+		return ans[:-1]
 
 	#encoding
 	def base16(string):
@@ -258,13 +258,13 @@ class decryption:
 	def vigenereCipher(string, key):
 		c = ""
 		a = [ord(i) for i in (string)]
-		b = [ord(i) for j in (key)]
-		for x in range (len(n)):
+		b = [ord(i) for i in (key)]
+		for x in range (len(string)):
 			d = (a[x] - b[x % len(key)]) % 26
-			if d.islower():
-				c += chr(65 + d)
-			else:
+			if string[x].islower() == True:
 				c += chr(97 + d)
+			else:
+				c += chr(65 + d)
 		return c
 
 	def morseCode(string):
@@ -364,21 +364,24 @@ class decryption:
 		ans = ""
 		for i in string:
 			ans += str(int(i, 2))
-		return ans
+			ans += " "
+		return ans[:-1]
 
 	def octal(string):
 		string = string.split(" ")
 		ans = ""
 		for i in string:
 			ans += str(int(i, 8))
-		return ans
+			ans += " "
+		return ans[:-1]
 
 	def hexadecimal(string):
 		string = string.split(" ")
 		ans = ""
 		for i in string:
 			ans += str(int(i, 16))
-		return ans
+			ans += " "
+		return ans[:-1]
 
 	#encoding
 	def base16(string):
