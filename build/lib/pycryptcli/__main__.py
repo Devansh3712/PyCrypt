@@ -242,7 +242,7 @@ def encrypt(technique: str, input_file, output_file, key: str):
 			output_file.write(result)
 
 	except:
-		print(f"An error occured, {technique} not found")
+		print(f"An error occured")
 
 @click.option("-t", "--technique", help = "Add the technique to be used")
 @click.option("-i", "--input_file", type = click.File('r'), required = True, help = "Add the input file")
@@ -449,7 +449,7 @@ def decrypt(technique: str, input_file, output_file, key: str):
 			output_file.write(result)
 
 	except:
-		print(f'An error occured, {technique} not found')
+		print(f'An error occured')
 
 @pycrypt.command()
 def info():

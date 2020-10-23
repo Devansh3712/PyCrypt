@@ -9,7 +9,7 @@ class encryption:
 	    c = ""
 	    for i in string:
 	        c = c + str(ord(i))
-	        c = c + ' '
+	        c += " "
 	    return c[:-1]
 
 	def caeserCipher(string, key):
@@ -118,26 +118,47 @@ class encryption:
 		    "Z": "..... .....",
 		}
 		c = ""
+		string = string.upper()
+		string = string.rstrip("\n")
 		for i in string:
-			i = i.upper()
-			if i != " ":
-				c += code[i] + " "
+			if i in code:
+				c += code[i] + "/"
+			elif i == " ":
+				c += " "
 			else:
-				c += "/ "
+				c += "#"
 		return c
 
 	#numeric
 	def binary(string):
-	    c = bin(int(string))[2:]
-	    return c
+		string = string.split(" ")
+		ans = ""
+		for i in string:
+			if i.isdigit() == False:
+				ans += bin(int(ord(i)))[2:]
+			else:
+				ans += bin(int(i))[2:]
+		return ans
 
 	def octal(string):
-	    c = oct(int(string))[2:]
-	    return c
+	    string = string.split(" ")
+	    ans = ""
+	    for i in string:
+	    	if i.isdigit() == False:
+	    		ans += oct(int(ord(i)))[2:]
+	    	else:
+	    		ans += oct(int(i))[2:]
+	    return ans
 
 	def hexadecimal(string):
-	    c = hex(int(string))[2:]
-	    return c
+		string = string.split(" ")
+		ans = ""
+		for i in string:
+			if i.isdigit() == False:
+				ans += hex(int(ord(i)))[2:]
+			else:
+				ans += hex(int(i))[2:]
+		return ans
 
 	#encoding
 	def base16(string):
@@ -325,26 +346,39 @@ class decryption:
 		    "Z": "..... .....",
 		}
 		b = ""
-		n = string.split(" ")
+		n = string.split("/")
 		for i in n:
-			if i != "/":
+			if i == "":
+				pass
+			elif i != "#" or i != " ":
 				b += list(code.keys())[list(code.values()).index(i)]
-			else:
+			elif i == " ":
 				b += " "
+			else:
+				b += "#"
 		return b
 
 	#numeric
 	def binary(string):
-		c = int(string, 2)
-		return c
+		string = string.split(" ")
+		ans = ""
+		for i in string:
+			ans += str(int(i, 2))
+		return ans
 
 	def octal(string):
-		c = int(string, 8)
-		return c
+		string = string.split(" ")
+		ans = ""
+		for i in string:
+			ans += str(int(i, 8))
+		return ans
 
 	def hexadecimal(string):
-		c = int(string, 16)
-		return c
+		string = string.split(" ")
+		ans = ""
+		for i in string:
+			ans += str(int(i, 16))
+		return ans
 
 	#encoding
 	def base16(string):
